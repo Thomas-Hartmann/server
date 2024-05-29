@@ -1,8 +1,7 @@
 import {UserEntity} from "../types";
 
 export interface ResolverContext {
-    user?: UserEntity,
-    token?: string
+    user?: UserEntity
 }
 
 export const resolvers = {
@@ -10,3 +9,4 @@ export const resolvers = {
         hello: () => 'Hello world!',
     },
 };
+
