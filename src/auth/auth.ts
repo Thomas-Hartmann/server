@@ -4,13 +4,23 @@ import jwt from 'jsonwebtoken';
 
 const secret = Buffer.from('Zn8Q5tyZ/G1MHltc4F/gTkVJMlrbKiZt', 'base64');
 
-// https://www.npmjs.com/package/express-jwt
+/*
+    * The JWT authentication middleware authenticates callers using a JWT.
+    * The decoded JWT payload is available on the request via the auth property.
+    * The default behavior of the module is to extract the JWT from the Authorization header (Bearer + token).
+    * https://www.npmjs.com/package/express-jwt
+ */
 export const authMiddleware = expressjwt({
     algorithms: ['HS256'],
     credentialsRequired: false,
     secret,
     onExpired: (req, err) => {
         // TODO: handle expired token
+        /*
+            * If the token is expired, the error will be an instance of TokenExpiredError (401).
+            * If the token is invalid, the error will be an instance of UnauthorizedError:.
+            * If the token is valid, the request object will be decorated with the properties of the JWT payload.
+         */
         console.log('onExpired', err);
     }
 });
