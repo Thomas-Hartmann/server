@@ -7,26 +7,30 @@ import http from 'http';
 import cors from 'cors';
 import {readFile} from "node:fs/promises";
 import {ResolverContext, resolvers} from './graphql/resolvers';
-import {authMiddleware, getUser, handleLogin} from "./auth";
+import {authMiddleware, getUser, handleLogin} from "./auth/auth";
 
-const typeDefs = await readFile('./schema.graphql', 'utf8');
+const typeDefs = await readFile('./src/graphql/schema.graphql', 'utf8');
 const app = express();
 const httpServer = http.createServer(app);
 const apolloServer = new ApolloServer({
     typeDefs,
     resolvers,
     plugins: [ApolloServerPluginDrainHttpServer({httpServer})],
-    introspection: process.env.NODE_ENV !== 'production', // https://www.apollographql.com/blog/why-you-should-disable-graphql-introspection-in-production/
+    // TODO: disable introspection in production https://www.apollographql.com/blog/why-you-should-disable-graphql-introspection-in-production/
+    introspection: process.env.NODE_ENV !== 'production',
 });
 
 interface Request extends express.Request {
-    auth?: {sub: string};
+    auth?: { sub: string };
 }
 
-async function getContext({req}: {req: Request}): Promise<ResolverContext> {
+async function getContext({req}: { req: Request }): Promise<ResolverContext> {
     const context: ResolverContext = {};
+
+    // TODO: not sure if we need user and token in context.
     if (req.auth) {
         context.user = await getUser(req.auth.sub);
+        context.token = req.headers.authorization!.replace('Bearer ', '');
     }
     return context;
 }

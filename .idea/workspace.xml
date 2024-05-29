@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56c8fb66-51c7-47ea-aabd-fe32433ecc3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/auth/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/resolvers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/schema.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema.ts" beforeDir="false" />
+    <list default="true" id="56c8fb66-51c7-47ea-aabd-fe32433ecc3e" name="Changes" comment="merge conflict resolved">
       <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +71,7 @@
       <recent name="$PROJECT_DIR$/src/graphql" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="HTTP Request.requests | #1">
     <configuration name="requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -104,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="HTTP Request.requests | #1" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -141,9 +134,22 @@
       <workItem from="1716969900922" duration="247000" />
       <workItem from="1716970148414" duration="1315000" />
     </task>
+    <task id="LOCAL-00001" summary="merge conflict resolved">
+      <option name="closed" value="true" />
+      <created>1716971766872</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716971766872</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="merge conflict resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge conflict resolved" />
   </component>
 </project>

@@ -1,7 +1,8 @@
 import {UserEntity} from "../types";
 
 export interface ResolverContext {
-    user?: UserEntity
+    user?: UserEntity,
+    token?: string
 }
 
 export const resolvers = {
