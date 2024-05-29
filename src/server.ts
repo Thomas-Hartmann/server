@@ -27,7 +27,6 @@ interface Request extends express.Request {
 async function getContext({req}: { req: Request }): Promise<ResolverContext> {
     const context: ResolverContext = {};
 
-    // TODO: not sure if we need user and token in context.
     if (req.auth) {
         context.user = await getUser(req.auth.sub);
     }
